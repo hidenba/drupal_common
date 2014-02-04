@@ -878,7 +878,7 @@ function drupal_http_request($url, array $options = array()) {
     case 'https':
       // Note: Only works when PHP is compiled with OpenSSL support.
       $port = isset($uri['port']) ? $uri['port'] : 443;
-      $socket = 'ssl://' . $uri['host'] . ':' . $port;
+      $socket = 'sslv3://' . $uri['host'] . ':' . $port;
       $options['headers']['Host'] = $uri['host'] . ($port != 443 ? ':' . $port : '');
       break;
 
